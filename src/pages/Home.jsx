@@ -19,7 +19,9 @@ const Home = () => {
   };
   useEffect(() => {
     getCoins();
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
     window.scrollTo(0, 0);
   }, [page]);
 
@@ -36,26 +38,26 @@ const Home = () => {
       <ToastContainer theme="dark" />
       <Navbar search={search} setSearch={setSearch} />
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 className="text-center text-xl font-bold">LOADING...</h1>
       ) : (
         <>
           <Coins setPage={setPage} coins={coins} search={search} />
+          <div className="text-center flex flex-col gap-2 items-center md:flex-row md:justify-center ">
+            <button
+              className="btn btn-primary w-48 md:mr-2 "
+              onClick={previousPageHandler}
+            >
+              Previous Page
+            </button>
+            <button
+              className="btn btn-success w-48"
+              onClick={() => setPage(page + 1)}
+            >
+              Next Page
+            </button>
+          </div>{" "}
         </>
       )}
-      <div className="text-center flex flex-col gap-2 items-center md:flex-row md:justify-center ">
-        <button
-          className="btn btn-primary w-48 md:mr-2 "
-          onClick={previousPageHandler}
-        >
-          Previous Page
-        </button>
-        <button
-          className="btn btn-success w-48"
-          onClick={() => setPage(page + 1)}
-        >
-          Next Page
-        </button>
-      </div>
       <Footer />
     </>
   );
