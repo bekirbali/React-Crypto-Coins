@@ -14,7 +14,7 @@ const Footer = () => {
       <button onClick={upHandler}>
         <BsFillCaretUpFill />
       </button>
-      <button onClick={downHandler}>
+      <button className="mx-2" onClick={downHandler}>
         <BsFillCaretDownFill />
       </button>
     </div>

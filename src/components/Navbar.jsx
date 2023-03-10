@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ search, setSearch }) => {
   return (
-    <div className="flex justify-between bg-black/50 text-white p-2 items-center">
+    <div className="flex justify-between bg-black/50 text-white p-2 items-center w-full">
       <div className="flex items-center gap-2 px-2 ">
         <img
           width="50px"

@@ -43,9 +43,9 @@ const Home = () => {
           <Coins setPage={setPage} coins={coins} search={search} />
         </>
       )}
-      <div className="text-center">
+      <div className="text-center flex flex-col gap-2 items-center md:flex-row md:justify-center ">
         <button
-          className="btn btn-primary w-48 mr-2"
+          className="btn btn-primary w-48 md:mr-2 "
           onClick={previousPageHandler}
         >
           Previous Page

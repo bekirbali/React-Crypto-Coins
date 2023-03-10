@@ -14,8 +14,8 @@ const Coins = ({ coins, search }) => {
             <th>#</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Market Cap</th>
-            <th>Volume</th>
+            <th className="hidden md:table-cell">Market Cap</th>
+            <th className="hidden md:table-cell">Volume</th>
             <th>Price Change</th>
           </tr>
         </thead>
@@ -43,15 +43,21 @@ const Coins = ({ coins, search }) => {
                   } = coin;
                   return (
                     <tr key={id}>
-                      <td>{index + 1}</td>
-                      <td className="flex items-center justify-center gap-1">
-                        <img width="50px" src={image} alt={id} />
-                        <span className="w-48">{name}</span>
+                      <td className="align-middle">{index + 1}</td>
+                      <td className="flex flex-col gap-1 sm:flex-row items-center justify-center m-auto">
+                        <img className="w-8" src={image} alt={id} />
+                        <span className="w-24 text-sm">{name}</span>
                       </td>
-                      <td>{current_price}</td>
-                      <td>{market_cap}</td>
-                      <td>{total_volume}</td>
-                      <td>{price_change_percentage_24h}</td>
+                      <td className="align-middle">{current_price}</td>
+                      <td className="hidden md:table-cell align-middle">
+                        {market_cap}
+                      </td>
+                      <td className="hidden md:table-cell align-middle">
+                        {total_volume}
+                      </td>
+                      <td className="align-middle">
+                        {price_change_percentage_24h}%
+                      </td>
                     </tr>
                   );
                 })
@@ -71,15 +77,21 @@ const Coins = ({ coins, search }) => {
                 } = coin;
                 return (
                   <tr key={id}>
-                    <td>{index + 1}</td>
-                    <td className="flex items-center justify-center gap-1">
+                    <td className="align-middle">{index + 1}</td>
+                    <td className="flex flex-col sm:flex-row items-center justify-center m-auto">
                       <img width="50px" src={image} alt={id} />
-                      <span className="w-48">{name}</span>
+                      <span className="w-24">{name}</span>
                     </td>
-                    <td>{current_price}</td>
-                    <td>{market_cap}</td>
-                    <td>{total_volume}</td>
-                    <td>{price_change_percentage_24h}</td>
+                    <td className="align-middle">{current_price}</td>
+                    <td className="hidden md:table-cell align-middle">
+                      {market_cap}
+                    </td>
+                    <td className="hidden md:table-cell align-middle">
+                      {total_volume}
+                    </td>
+                    <td className="align-middle">
+                      {price_change_percentage_24h}%
+                    </td>
                   </tr>
                 );
               })
