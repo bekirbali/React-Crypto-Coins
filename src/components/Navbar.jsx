@@ -9,10 +9,15 @@ const Navbar = ({ search, setSearch }) => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
           alt=""
         />
-        <h1 className="font-bold text-xl">Crypto Coins</h1>
+        <h1 className="font-bold text-xl ">Crypto Coins</h1>
       </div>
-      <form className="search" onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="search">Search</label>
+      <form
+        className="flex flex-col items-start md:flex-row md:items-center"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <label htmlFor="search" className="ml-2">
+          Search
+        </label>
         <input
           className="enabled:hover:border-green-500 invalid:border-red-500 valid:border-green-500 rounded-md p-1 text-black outline-none capitalize mx-2"
           type="search"
