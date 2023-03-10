@@ -29,7 +29,7 @@ const Home = () => {
 
   const previousPageHandler = () => {
     page - 1 && setPage(page - 1);
-    !page - 1 && notify();
+    !page - 1 || notify();
   };
 
   return (
